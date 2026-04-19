@@ -35,25 +35,34 @@
         <plugins>
 
             <!-- Clean Plugin -->
-            <plugin>
+           <plugin>
     <groupId>org.mule.tools.maven</groupId>
     <artifactId>mule-maven-plugin</artifactId>
     <version>${mule.maven.plugin.version}</version>
     <extensions>true</extensions>
     <configuration>
-        <cloudHubDeployment>
+
+        <cloudhub2Deployment>
             <uri>https://anypoint.mulesoft.com</uri>
-            <muleVersion>${mule.version}</muleVersion>
+
             <connectedAppClientId>${anypoint.client_id}</connectedAppClientId>
             <connectedAppClientSecret>${anypoint.client_secret}</connectedAppClientSecret>
             <connectedAppGrantType>client_credentials</connectedAppGrantType>
+
             <environment>${env}</environment>
+
+            <!-- IMPORTANT -->
+            <target>Cloudhub-US-East-1</target>
+
             <applicationName>${appname}</applicationName>
-            <businessGroup>${business}</businessGroup>
-            <workerType>${vCore}</workerType>
-            <workers>${workers}</workers>
+
+            <!-- CloudHub 2.0 uses vCores differently -->
+            <vCores>0.1</vCores>
+            <replicas>1</replicas>
+
             <objectStoreV2>true</objectStoreV2>
-        </cloudHubDeployment>
+        </cloudhub2Deployment>
+
     </configuration>
 </plugin>
 
