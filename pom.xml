@@ -36,44 +36,26 @@
 
             <!-- Clean Plugin -->
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-clean-plugin</artifactId>
-                <version>3.2.0</version>
-            </plugin>
-
-            <!-- Mule Maven Plugin -->
-            <plugin>
-                <groupId>org.mule.tools.maven</groupId>
-                <artifactId>mule-maven-plugin</artifactId>
-                <version>${mule.maven.plugin.version}</version>
-                <extensions>true</extensions>
-
-                <configuration>
-                    <cloudhub2Deployment>
-
-                        <!-- Anypoint -->
-                        <uri>https://anypoint.mulesoft.com</uri>
-                        <username>${anypoint.username}</username>
-                        <password>${anypoint.password}</password>
-
-                        <!-- App -->
-                        <applicationName>${cloudhub.application.name}</applicationName>
-                        <environment>${cloudhub.environment}</environment>
-                        <target>${cloudhub.target}</target>
-
-                        <!-- REQUIRED -->
-                        <provider>MC</provider>
-
-                        <!-- Runtime -->
-                        <muleVersion>${app.runtime}</muleVersion>
-
-                        <!-- Resources -->
-                        <replicas>${cloudhub.replicas}</replicas>
-                        <vCores>${cloudhub.vcores}</vCores>
-
-                    </cloudhub2Deployment>
-                </configuration>
-            </plugin>
+    <groupId>org.mule.tools.maven</groupId>
+    <artifactId>mule-maven-plugin</artifactId>
+    <version>${mule.maven.plugin.version}</version>
+    <extensions>true</extensions>
+    <configuration>
+        <cloudHubDeployment>
+            <uri>https://anypoint.mulesoft.com</uri>
+            <muleVersion>${mule.version}</muleVersion>
+            <connectedAppClientId>${anypoint.client_id}</connectedAppClientId>
+            <connectedAppClientSecret>${anypoint.client_secret}</connectedAppClientSecret>
+            <connectedAppGrantType>client_credentials</connectedAppGrantType>
+            <environment>${env}</environment>
+            <applicationName>${appname}</applicationName>
+            <businessGroup>${business}</businessGroup>
+            <workerType>${vCore}</workerType>
+            <workers>${workers}</workers>
+            <objectStoreV2>true</objectStoreV2>
+        </cloudHubDeployment>
+    </configuration>
+</plugin>
 
         </plugins>
     </build>
