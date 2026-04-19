@@ -50,17 +50,13 @@
             <connectedAppGrantType>client_credentials</connectedAppGrantType>
 
             <environment>${env}</environment>
-
-            <!-- IMPORTANT -->
             <target>Cloudhub-US-East-1</target>
 
             <applicationName>${appname}</applicationName>
 
-            <!-- CloudHub 2.0 uses vCores differently -->
             <vCores>0.1</vCores>
             <replicas>1</replicas>
 
-            <objectStoreV2>true</objectStoreV2>
         </cloudhub2Deployment>
 
     </configuration>
