@@ -32,20 +32,25 @@
                 <extensions>true</extensions>
                 <configuration>
                     <cloudhub2Deployment>
-					<artifact>
-    <file>${project.build.directory}/${project.build.finalName}-mule-application.jar</file>
-</artifact>
-                        <uri>https://anypoint.mulesoft.com</uri>
-						<provider>MC</provider>
-                        <connectedAppClientId>${anypoint.client_id}</connectedAppClientId>
-                        <connectedAppClientSecret>${anypoint.client_secret}</connectedAppClientSecret>
-                        <connectedAppGrantType>client_credentials</connectedAppGrantType>
-                        <environment>${env}</environment>
-                        <target>${cloudhub.target}</target>
-                        <applicationName>${appname}</applicationName>
-                        <replicas>${cloudhub.replicas}</replicas>
-                        <vCores>${cloudhub.vcores}</vCores>
-                    </cloudhub2Deployment>
+    <uri>https://anypoint.mulesoft.com</uri>
+
+    <provider>MC</provider>
+
+    <connectedAppClientId>${anypoint.client_id}</connectedAppClientId>
+    <connectedAppClientSecret>${anypoint.client_secret}</connectedAppClientSecret>
+    <connectedAppGrantType>client_credentials</connectedAppGrantType>
+
+    <environment>${env}</environment>
+    <target>${cloudhub.target}</target>
+
+    <applicationName>${appname}</applicationName>
+
+    <replicas>${cloudhub.replicas}</replicas>
+    <vCores>${cloudhub.vcores}</vCores>
+
+    <!-- ✅ FIXED -->
+    <artifact>${project.build.directory}/${project.build.finalName}-mule-application.jar</artifact>
+</cloudhub2Deployment>
                 </configuration>
             </plugin>
 
