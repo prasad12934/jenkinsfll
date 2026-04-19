@@ -32,6 +32,9 @@
                 <extensions>true</extensions>
                 <configuration>
                     <cloudhub2Deployment>
+					<artifact>
+    <file>${project.build.directory}/${project.build.finalName}-mule-application.jar</file>
+</artifact>
                         <uri>https://anypoint.mulesoft.com</uri>
 						<provider>MC</provider>
                         <connectedAppClientId>${anypoint.client_id}</connectedAppClientId>
