@@ -58,9 +58,6 @@
                 <groupId>org.mule.tools.maven</groupId>
                 <artifactId>exchange-mule-maven-plugin</artifactId>
                 <version>0.1.7</version>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
             </plugin>
         </plugins>
     </build>
@@ -106,5 +103,11 @@
             <url>https://repository.mulesoft.org/nexus/repository/releases/</url>
         </pluginRepository>
     </pluginRepositories>
+	<distributionManagement>
+    <repository>
+        <id>anypoint-exchange</id>
+        <url>https://maven.anypoint.mulesoft.com/api/v1/organizations/YOUR_ORG_ID/maven</url>
+    </repository>
+</distributionManagement>
 
 </project>
