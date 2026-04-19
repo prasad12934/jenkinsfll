@@ -58,7 +58,7 @@
             </configuration>
         </plugin>
 
-        <!-- 🔥 Disable Exchange Deployment -->
+        <!-- Disable Exchange Deployment (fixes your last error) -->
         <plugin>
             <groupId>org.mule.tools.maven</groupId>
             <artifactId>exchange-mule-maven-plugin</artifactId>
