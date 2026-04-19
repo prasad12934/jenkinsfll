@@ -18,7 +18,7 @@
         <app.runtime>4.6.0</app.runtime>
         <mule.maven.plugin.version>4.7.0</mule.maven.plugin.version>
 
-        <cloudhub.target>Cloudhub-US-East-1</cloudhub.target>
+        <cloudhub.target>Cloudhub-US-East-2</cloudhub.target>
         <cloudhub.replicas>1</cloudhub.replicas>
         <cloudhub.vcores>0.1</cloudhub.vcores>
     </properties>
